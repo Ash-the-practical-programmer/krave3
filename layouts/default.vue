@@ -41,3 +41,10 @@
 
   // No authentication logic needed here for now
   </script>
+
+  <style scoped>
+  @reference "tailwindcss";
+  li {
+    @apply ml-0.5 mr-0.5;
+  }
+  </style>
