@@ -2,7 +2,7 @@
 import tailwindcss from "@tailwindcss/vite"
 export default defineNuxtConfig({
   runtimeConfig: {
-    geminiapikey: process.env.GOOGLE_GENERATIVE_API_KEY,
+    geminiapikey: process.env.OPEN_API_KEY,
   },
   vite: {
     plugins: [tailwindcss()],

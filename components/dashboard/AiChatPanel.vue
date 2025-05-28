@@ -12,6 +12,7 @@
           @click="toggleChat"
         >
           <div class="flex items-center">
+            <CommonAppLogo class="h-6 w-auto mr-2" />
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-6 w-6 text-primary mr-2"
@@ -72,12 +73,10 @@
           <div
             v-for="(m, msgIndex) in messages"
             :key="m.id || `msg-${msgIndex}`"
-            class="chat"
-            :class="m.role === 'user' ? 'chat-end' : 'chat-start'"
+            class="chat chat-start"
           >
             <div
-              class="chat-bubble"
-              :class="m.role === 'user' ? 'chat-bubble-primary' : 'chat-bubble-secondary'"
+              class="chat-bubble text-sm pl-2 pr-2 overflow-hidden chat-bubble-secondary"
             >
               <!-- Handle both string and array content -->
               <template v-if="Array.isArray(m.content)">
@@ -99,24 +98,23 @@
         </div>
   
         <!-- Input Area -->
-        <div v-if="isOpen" class="p-3 border-t border-base-300">
-          <form @submit.prevent="handleSubmit" class="flex items-center gap-2">
+        <div v-if="isOpen" class="p-3 border-t border-base-300 flex justify-center items-center">
+          <form @submit.prevent="handleSubmit" class="flex w-[80%] sm:w-[90%] items-center gap-2">
             <input
               type="text"
               v-model="input"
               placeholder="Ask about your bio-data..."
-              class="input input-bordered input-sm flex-grow"
+              class="input border-blue-500 focus:outline-none input-sm flex-grow"
               :disabled="isLoading"
             />
             <button
               type="submit"
-              class="btn btn-primary btn-sm"
+              class="btn btn-primary btn-sm p-1.5"
               :disabled="!input.trim() || isLoading"
             >
-              Send
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4 ml-1"
+                class="h-4 w-4"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -136,16 +134,15 @@
   </template>
   
   <script setup lang="ts">
+  import { CommonAppLogo } from '#components';
   import { useChat } from '@ai-sdk/vue';
-  import { ref, watch, nextTick } from 'vue';
+import { ref, watch, nextTick } from 'vue';
   
   const isOpen = ref(false);
   const chatMessagesContainer = ref<HTMLElement | null>(null);
   
   // Initialize the useChat hook
-  const { messages, input, handleSubmit, isLoading, error, setMessages } = useChat({
-    api: '/api/chat', // Ensure this points to your backend endpoint
-  });
+const { messages, input, handleSubmit, isLoading, error, setMessages } = useChat();
   
   // Set initial message if none exist
   if (messages.value.length === 0) {

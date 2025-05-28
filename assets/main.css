@@ -2,3 +2,48 @@
 @plugin "daisyui" {
     themes: all;
 }
+@plugin "daisyui/theme" {
+    name: "elite-colorhunt-rebel";
+    default: false;
+    prefersdark: true;
+    color-scheme: "dark";
+    --color-base-100: oklch(25% 0.05 0);
+    /* Black-heavy gray, Dracula-inspired */
+    --color-base-200: oklch(30% 0.05 0);
+    /* Lighter variant */
+    --color-base-300: oklch(35% 0.05 0);
+    /* Lighter variant */
+    --color-base-content: oklch(90% 0.033 97.2);
+    /* #E5E3C9 */
+    --color-primary: oklch(75% 0.15 146.7);
+    /* #B4CFB0 variant */
+    --color-primary-content: oklch(95% 0.02 146.7);
+    --color-secondary: oklch(70% 0.15 149.8);
+    /* #94B49F variant */
+    --color-secondary-content: oklch(95% 0.02 149.8);
+    --color-accent: oklch(60% 0.15 183.2);
+    /* #789395 */
+    --color-accent-content: oklch(95% 0.02 183.2);
+    --color-neutral: oklch(65% 0.02 183.2);
+    /* #789395 variant */
+    --color-neutral-content: oklch(92% 0.02 0);
+    --color-info: oklch(70% 0.15 149.8);
+    /* Sage variant */
+    --color-info-content: oklch(95% 0.02 149.8);
+    --color-success: oklch(75% 0.15 146.7);
+    /* Pale green variant */
+    --color-success-content: oklch(95% 0.02 146.7);
+    --color-warning: oklch(70% 0.15 80);
+    /* Ochre, derived */
+    --color-warning-content: oklch(95% 0.02 80);
+    --color-error: oklch(70% 0.15 350);
+    /* Mauve, avoiding red */
+    --color-error-content: oklch(95% 0.02 350);
+    --radius-selector: 0.75rem;
+    --radius-field: 0.75rem;
+    --radius-box: 0.75rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 0.5px;
+    --depth: 1;
+    --noise: 1; }

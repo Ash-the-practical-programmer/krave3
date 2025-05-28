@@ -9,7 +9,7 @@
 import { useHead } from '#app';
 useHead({
     htmlAttrs: {
-        'data-theme': 'business',
+        'data-theme': 'elite-colorhunt-rebel',
     }
 });
 </script>

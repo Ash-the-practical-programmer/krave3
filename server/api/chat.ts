@@ -3,7 +3,7 @@ import { createGoogleGenerativeAI, GoogleGenerativeAIProviderOptions } from '@ai
 
 export default defineLazyEventHandler(async () => {
   const apiKey = useRuntimeConfig().geminiapikey;
-  if (!apiKey) throw new Error('impotency');
+  if (!apiKey) throw new Error('api key bs');
   const google = createGoogleGenerativeAI({
     apiKey: apiKey,
   });
