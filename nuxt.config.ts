@@ -5,7 +5,12 @@ export default defineNuxtConfig({
     geminiapikey: process.env.OPEN_API_KEY,
   },
   vite: {
-    plugins: [tailwindcss()],
+      plugins: [tailwindcss()],
+      build: {
+          rollupOptions: {
+              external: ['@ai-sdk/vue', '@ai-sdk/google'],
+          },
+      },
   },
   css: ['~/assets/main.css'],
   compatibilityDate: '2025-05-15',
