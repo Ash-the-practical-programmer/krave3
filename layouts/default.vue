@@ -5,16 +5,16 @@
         <div class="navbar container mx-auto">
           <div class="flex-1">
             <NuxtLink to="/" class="btn btn-ghost normal-case text-xl text-primary">
-              BioOptimizer
+              Krave
             </NuxtLink>
           </div>
           <div class="flex-none">
             <ul class="menu menu-horizontal px-1 items-center">
-              <li><NuxtLink to="/" class="btn btn-ghost" active-class="btn-active">Dashboard</NuxtLink></li>
-              <li><NuxtLink to="/log-food" class="btn btn-ghost" active-class="btn-active">Log Food</NuxtLink></li>
-              <li><NuxtLink to="/insights" class="btn btn-ghost" active-class="btn-active">Insights</NuxtLink></li>
-              <li><NuxtLink to="/log-supplements" class="btn btn-ghost" active-class="btn-active">Log Supplements</NuxtLink></li>
-              <li><NuxtLink to="/settings" class="btn btn-ghost" active-class="btn-active">Settings</NuxtLink></li>
+              <li><NuxtLink to="/" class="btn btn-ghost p-1.5" active-class="btn-active">Dashboard</NuxtLink></li>
+              <li><NuxtLink to="/log-food" class="btn btn-ghost p-1.5" active-class="btn-active">Log Food</NuxtLink></li>
+              <li><NuxtLink to="/insights" class="btn btn-ghost p-1.5" active-class="btn-active">Insights</NuxtLink></li>
+              <li><NuxtLink to="/log-supplements" class="btn btn-ghost p-1.5" active-class="btn-active">Log Supplements</NuxtLink></li>
+              <li><NuxtLink to="/settings" class="btn btn-ghost p-1.5" active-class="btn-active">Settings</NuxtLink></li>
               <!-- Add other core feature links here as they are developed -->
               <!-- e.g., <li><NuxtLink to="/protocols" class="btn btn-ghost" active-class="btn-active">Protocols</NuxtLink></li> -->
             </ul>
@@ -41,3 +41,10 @@
 
   // No authentication logic needed here for now
   </script>
+
+  <style scoped>
+  @reference "tailwindcss";
+  li {
+    @apply ml-0.5 mr-0.5;
+  }
+  </style>
